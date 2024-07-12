@@ -2,6 +2,10 @@
 
 This guide will show you how to use `trackfwd` with Unreal Engine and Blueprints to receive tracking data and apply it to an object in your scene.
 
+## Prerequisites
+
+You will need to have the OSC plugin enabled in your Unreal Engine project. You can enable the OSC plugin by going to `Edit` -> `Plugins` and searching for `OSC`. Make sure the plugin is enabled and restart the editor.
+
 ## Starting the OSC Server
 
 In your blueprint, you will need to create an OSC server to receive the tracking data. You can do this by adding the following nodes to your blueprint:
@@ -9,6 +13,8 @@ In your blueprint, you will need to create an OSC server to receive the tracking
 ![Start OSC Server](content/unreal/Starting_The_OSC_Server.png)
 
 The `Start OSC Server` node will start the OSC server on the specified port and should only be called once (for example, on `Event BeginPlay`). The On OSC Message Received event will be triggered whenever a message is received on the specified port. For the IP address, you can either use `0.0.0.0` to listen on all available interfaces, or specify a specific IP address to listen on. For the port, you can use any available port, but it should match the port that `trackfwd` is broadcasting on. In this example, we are using port `9000`.
+
+To create the `OnTrackerMessageReceived` event, drag out the `Event` property from the `Bind Event to On OSC Message Received` node and select `Add Custom Event`.
 
 Ths `Is Tracker Transform` collapsed subgraph checks if the incoming OSC message starts with `/tracker/` followed by the index of the desired tracker (in this case, `0`). If the message matches the expected format, it is passed to the `Update Target Tracker Transform` function.
 
