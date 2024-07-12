@@ -12,7 +12,7 @@ trackfwd <port>
 For a detailed guide, see the application specific tutorials:
 
 -   [Unreal Engine](tutorials/unreal.md)
--   Unity (coming soon)
+-   [Unity](tutorials/unity.md)
 
 ### Arguments
 
