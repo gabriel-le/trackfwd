@@ -67,6 +67,12 @@ impl Quaternion {
                 z: x,
                 w: w * -1.0,
             },
+            Some(CoordsSystem::Blender) => Quaternion {
+                x: x,
+                y: z,
+                z: y,
+                w: w,
+            },
             _ => Quaternion { x, y, z, w },
         }
     }
@@ -93,6 +99,11 @@ impl Vector3 {
                 x: pose[2][3], // Z
                 y: pose[1][3], // Y
                 z: pose[0][3], // X
+            },
+            Some(CoordsSystem::Blender) => Vector3 {
+                x: pose[0][3], // X
+                y: pose[2][3], // Z
+                z: pose[1][3], // Y
             },
             _ => Vector3 {
                 x: pose[0][3], // X
