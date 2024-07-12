@@ -1,0 +1,10 @@
+[package]
+name = "trackfwd"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = { version = "1.0.204", features = ["derive"] }
+clap = { version = "4.5.4", features = ["derive"] }
+openvr = "0.6.0"
+rosc = "0.10.1"
