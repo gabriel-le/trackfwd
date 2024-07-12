@@ -1,5 +1,7 @@
 # Trackfwd - A command line application to broadcast OpenVR tracking data over OSC
 
+_/tɹækfɔɹwəɹd/_
+
 This is a simple rust command line application that broadcasts OpenVR tracking data over OSC. I was frustrated with the LiveLinkXR plugin in Unreal Engine, so rather than relying on it, I decided to write my own solution.
 This will only broadcast generic trackers (vive trackers, tundra trackers, etc) and not controllers/HMD, although it should be trivial to modify the code to include them.
 
@@ -63,3 +65,4 @@ There's a few features that could be added to this application to make it more u
 -   Making a simple GUI for configuration
 -   Recording and exporting tracking data
 -   Playback of recorded tracking data
+-   Making a LiveLink plugin for Unreal Engine to integrate with existing workflows
